@@ -1,0 +1,87 @@
+/* Product card styles */
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    text-align: left;
+    max-width: 100%;
+  
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .product-image {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+      object-position: center;
+      object-fit: cover;
+    }
+  
+    p {
+      font-size: 14px;
+      margin: 5px 0;
+  
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+  
+  /* Styling for the Products component */
+
+.product-list {
+    margin: 20px auto;
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    grid-gap: 20px; 
+}
+
+/* CSS for the Edit and Delete Buttons with Black and Orange Colors */
+.product-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .edit-button,
+  .delete-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+  }
+  
+  /* Edit Button Styles */
+  .delete-button {
+    background-color: #f58220; /* Orange color */
+    color: #000; /* Black text */
+  }
+  
+  .delete-button:hover {
+    background-color: #d45c10; /* Darker orange on hover */
+    color: #fff; /* White text on hover */
+  }
+  
+  /* Delete Button Styles */
+  .edit-button {
+    background-color: #000; /* Black color */
+    color: #fff; /* White text */
+  }
+  
+  .edit-button:hover {
+    background-color: #333; /* Darker black on hover */
+  }
+  
