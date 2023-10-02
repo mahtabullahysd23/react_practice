@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Products.scss';
 import { useNavigate } from 'react-router-dom';
-import useBook from '../customHooks/useBook';
+import { productContet } from '../../App';
 const ProductCard = (props) => {
-    const {count,setCount} = useBook();
   const {product_id,name, price, author, genre, publisher, pages, language, rating, imageSrc } = props;
   const navigate = useNavigate();
+  const {deleted,setDeleted} = useContext(productContet);
   const handleClick = () => {
-    navigate(`/home`);
     fetch(`http://localhost:8000/api/books/delete/${product_id}`, {
       method: "DELETE",
     }).then(() => {
-        setCount(count + 1);
+      setDeleted(!deleted);
     });
   };
 

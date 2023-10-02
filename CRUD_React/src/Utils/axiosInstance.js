@@ -1,0 +1,10 @@
+import axios from 'axios';
+const customAxios = axios.create({
+  baseURL: 'http://127.0.0.1:8000/api',
+  timeout: 5000, 
+  headers: {
+    'Content-Type': 'application/json', 
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjY1MGE2YWM5NDg0ZGZlOGYyMTg0YjJjYyIsImVtYWlsIjp7ImlkIjoibWFodGFiMTFAZ21haWwuY29tIiwic3RhdHVzIjp0cnVlfSwicGFzc3dvcmQiOiIkMmIkMTAkY081QWd6alhnRDNwV3ZBQVByUVZWLndZSlBWc1NiVk9PVlZvaC8udTBNdFc0VXlyd2VHUEMiLCJyb2xlIjoidXNlciIsInVzZXIiOnsiX2lkIjoiNjUwYTZhYzg0ODRkZmU4ZjIxODRiMmNhIiwibmFtZSI6Ik1haHRhYiBVbGxhaCBTYW5pIiwiZW1haWwiOiJtYWh0YWIxMUBnbWFpbC5jb20iLCJhZGRyZXNzIjoiQmFkZGEsRGhha2EifSwiY291bnRyeSI6IkJhbmdsYWRlc2giLCJhdHRlbXB0IjowLCJsb2NrZWQiOmZhbHNlLCJ1bmxvYWNrVGltZSI6IjE5NzAtMDEtMDFUMDA6MDA6MDAuMDAwWiIsImJhbm5lZCI6ZmFsc2UsIl9fdiI6MH0sImlhdCI6MTY5NTE4MTcyOSwiZXhwIjoxNjk1MjY4MTI5fQ.JdCixksVjZlBjugELXNGrw-_FZomXdtYtU1rvauOHSQ',
+  },
+});
+  export default customAxios;

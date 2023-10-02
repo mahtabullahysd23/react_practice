@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import "./EditProduct.scss";
-import useUpdateBook from "../customHooks/useUpdateBook";
+import useUpdateBook from "../../customHooks/useUpdateBook";
+import Loader from "../Loader/Loader";
 
 const EditProduct = () => {
   const { id } = useParams();
-  const { product, handleInputChange, handleSubmit, isSuccess } = useUpdateBook(id);
+  const { product, handleInputChange, handleSubmit, isSuccess,loading } = useUpdateBook(id);
   return (
+   loading ? <Loader /> :
     <div className="add-product">
       <h2>Update Product</h2>
       {isSuccess && <div className="success-message">Successfully Updated Successfully!</div>}

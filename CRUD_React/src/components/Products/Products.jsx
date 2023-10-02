@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import useBook from '../customHooks/useBook'
+import useBook from '../../customHooks/useBook'
+import Loader from "../Loader/Loader";
+import SearchBar from "./Search";
 const Products = () => {
-    const {products, loading} = useBook();
+    const {products, loading ,setSearchQuery} = useBook(); 
+    const handleSearch = (query) => {
+        if(query === ''){
+          setSearchQuery('/books')
+        }
+        else{
+          setSearchQuery(`/books?Search=${query}`);
+        }
+    };
   return (
     <div>
+      <SearchBar onSearch={handleSearch}/>
       {loading ? (
-        <div class="lodder-container">
-          <div class="loadingio-spinner-spinner-t3jku8puph">
-            <div class="ldio-4jy3oy6837s">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
+        <Loader />
       ) : (
+        products.length > 0?
         <div className="product-list">
           {products.map((product) => (
             <ProductCard
@@ -43,6 +38,8 @@ const Products = () => {
               }
             />
           ))}
+        </div>:<div className="Not_found">
+          <h1>No Products Found</h1>
         </div>
       )}
     </div>

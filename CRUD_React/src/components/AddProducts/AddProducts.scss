@@ -4,6 +4,7 @@
     max-width: 40%;
     margin: 0 auto;
     padding: 20px;
+    height: 90vh;
   
     h2 {
       margin-bottom: 20px;
@@ -58,3 +59,9 @@
     margin-top: 10px;
   }
   
+
+  form p{
+    color:red;
+    font-size: 12px;
+    text-align: left;
+  }
